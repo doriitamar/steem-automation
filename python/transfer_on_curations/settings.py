@@ -1,0 +1,12 @@
+WATCH_ACCOUNT = "utopian-io"
+PAY_ACCOUNT = "utopian.org"
+BANK_ACCOUNT = "utopian.com"
+MEMO_TEMPLATE = "DONATION: ORGANIZATION SHARE ON CURATION REWARDS"
+
+ACTIVE_KEY = "ACTIVE_KEY"
+CHECKPOINT_VAL = 10000  # Every 10k generated
+TRANSFER_AMOUNT_PER_ROUND = 1000  # send 1k steem
+
+STARTING_TIME = '2017-12-30T04:12:48'
+MONGO_URI = 'mongodb://localhost:27017/'
+NODES = ["https://rpc.buildteam.io"]
