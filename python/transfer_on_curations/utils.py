@@ -1,45 +1,10 @@
-from steem import Steem
 from steem.amount import Amount
-from steem.account import Account
 from dateutil.parser import parse
-from os.path import expanduser, exists
-from os import makedirs
-from datetime import datetime
 import logging
 
 logger = logging.getLogger('steemrocks')
 logger.setLevel(logging.INFO)
 logging.basicConfig()
-
-
-# This account will be monitored for their curation rewards
-WATCH_ACCOUNT = "emrebeyler"
-
-# If the checkpoint is reached, which account will get the steem?
-PAY_ACCOUNT = "turbot"
-
-# Every N Steem generated in terms of curation rewards
-CHECKPOINT = 5
-
-# Active key to make the transfer
-ACTIVE_KEY = ""
-
-
-def load_starting_point(fallback_starting_point=None):
-    try:
-        return int(open(CHECKPOINT).read())
-    except FileNotFoundError as e:
-        if not exists(CONFIG_PATH):
-            makedirs(CONFIG_PATH)
-
-            dump_starting_point(fallback_starting_point)
-        return load_starting_point()
-
-
-def dump_starting_point(starting_point):
-    f = open(CHECKPOINT, 'w+')
-    f.write(str(starting_point))
-    f.close()
 
 
 def vests_to_sp(vests, info):
