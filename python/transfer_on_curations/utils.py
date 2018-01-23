@@ -31,7 +31,7 @@ def get_curation_rewards(account, info, checkpoint_val=100, starting_time=None):
         curation_reward_rshares = Amount(curation_reward["reward"]).amount
         total_reward_in_rshares += curation_reward_rshares
         total_reward_in_sp += vests_to_sp(curation_reward_rshares, info)
-        if int(total_reward_in_sp) % checkpoint < 10 and \
+        if int(total_reward_in_sp) % checkpoint < 50 and \
                 int(total_reward_in_sp) >= checkpoint:
             checkpoints.append({
                 "timestamp": curation_reward["timestamp"],
